@@ -11,6 +11,9 @@ def index():
 def canvas():
     return render_template('canva.html')
 
+@app.route('/webcam')
+def webcam():
+    return render_template('webcam.html')
 
 
 if __name__ == '__main__':

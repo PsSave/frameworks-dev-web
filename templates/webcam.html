@@ -3,9 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>WebCam</title>
+  <link rel="stylesheet" href="../static/css/webcam.css">
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Captura de Imagem da Webcam</h1>
+    <div class="content">
+      <div class="video-container">
+        <div class="label">Câmera ao Vivo</div>
+        <video id="video" autoplay playsinline></video>
+        <button id="snap">Capturar Imagem</button>
+      </div>
+      <div class="canvas-container">
+        <div class="label">Imagem Capturada</div>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.error("Error accessing the camera: ", err);
+      });
+
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    const snap = document.getElementById('snap');
+
+    snap.addEventListener('click', () => {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    });
+  </script>
 </body>
 </html>
