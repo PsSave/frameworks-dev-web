@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/list.css">
+  <title>List</title>
+</head>
+
+<body>
+  <h1>Items list</h1>
+  <div class="grid-container">
+    <div class="grid-header">ID</div>
+    <div class="grid-header">Name</div>
+    <div class="grid-header">Surname</div>
+    <div class="grid-header">Email</div>
+    <div class="grid-header">Actions</div>
+    <script>
+      const gridContainer = document.querySelector('.grid-container');
+      for (let i = 1; i <= 997; i++) {
+        gridContainer.innerHTML += `
+          <div class="grid-item">${i}</div>
+          <div class="grid-item">Name ${i}</div>
+          <div class="grid-item">Surname ${i}</div>
+          <div class="grid-item">user${i}@example.com</div>
+          <div class="grid-item">
+            <button class="action-btn edit">Edit</button>
+            <button class="action-btn delete">Delete</button>
+          </div>
+        `;
+      }
+    </script>
+  </div>
+</body>
+
+</html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/css/canva.css">
-  <title>Mover foto com setas</title>
+  <title>Canva</title>
 </head>
 
 <body>
@@ -29,12 +29,12 @@
     const rightArrow = document.getElementById('rightArrow');
     const leftArrow = document.getElementById('leftArrow');
 
-    let left = 50;
+    let left = 0;
     window.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowRight') {
         console.log(foto)
-        left += 5;
-        foto.style.left = `${left}%`;
+        left += 10;
+        foto.style.left = `${left}px`;
         rightArrow.style.color = '#000';
         setTimeout(() => {
           rightArrow.style.color = '#FFF';
@@ -42,8 +42,8 @@
       }
 
       if (event.key === 'ArrowLeft') {
-        left -= 5;
-        foto.style.left = `${left}%`;
+        left -= 10; 
+        foto.style.left = `${left}px`;
         leftArrow.style.color = '#000';
         setTimeout(() => {
           leftArrow.style.color = '#FFF';
