@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 03 - Introdução ao Flask</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_aula.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h4>AULA 03 (30/10/2024)</h4>
+      <a href="{{ url_for('index') }}" class="btn-voltar">Voltar para a Home</a>
+      <div class="decorative-line"></div>
+
+      <h2>Introdução às Aplicações Web com Flask</h2>
+      <p>
+        Nesta aula, exploramos os conceitos fundamentais de
+        <em>requests</em> (solicitações) e <em>responses</em> (respostas) entre
+        cliente e servidor, que são a base para a criação de aplicações web
+        dinâmicas com Flask.
+      </p>
+
+      <hr />
+
+      <h2>Iniciando o Servidor Flask</h2>
+      <p>Você pode iniciar o servidor de duas formas:</p>
+      <ol>
+        <li>
+          Pelo terminal com o comando:
+          <pre><code>flask run --debug</code></pre>
+        </li>
+        <li>
+          Executando diretamente o script (desde que o app esteja configurado
+          com <code>app.run(debug=True, host='0.0.0.0')</code>):
+          <pre><code>python app.py</code></pre>
+        </li>
+      </ol>
+      <p>
+        O modo <em>debug</em> reinicia o servidor automaticamente sempre que uma
+        alteração é detectada no código.
+      </p>
+
+      <hr />
+
+      <h2>Criando uma Rota Básica</h2>
+      <p>
+        Para criar uma rota simples, utilize o decorador <code>@app.get</code>:
+      </p>
+      <pre><code>@app.get("/")
+def home():
+    return {"message": "Hello, Flask!"}</code></pre>
+      <p>
+        Para definir uma rota que aceite múltiplos métodos, use o decorador
+        <code>@app.route</code> com o parâmetro <code>methods</code>:
+      </p>
+      <pre><code>from flask import request
+
+@app.route("/data", methods=["GET", "POST"])
+def data_handler():
+    if request.method == "POST":
+        # Processa os dados enviados
+        pass
+    else:
+        # Retorna os dados
+        pass</code></pre>
+
+      <hr />
+
+      <h2>Atividades Propostas</h2>
+      <ol>
+        <li>
+          Criar uma rota que renderize um template com um elemento
+          <code>canvas</code> para manipulação de imagens.
+        </li>
+        <li>
+          Implementar uma rota que permita capturar uma imagem usando a webcam.
+        </li>
+        <li>
+          Exibir uma tabela dinâmica em uma rota específica com dados simulados.
+        </li>
+        <li>Criar rotas "bonitas" para cada atividade proposta.</li>
+      </ol>
+
+      <a href="/menu" class="btn-voltar">Exercícios</a>
+    </div>
+  </body>
+</html>
