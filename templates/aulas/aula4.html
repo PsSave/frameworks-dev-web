@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Aula 04 - Criando Ambiente Virtual e Renderizando Páginas com Flask
+    </title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_aula.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Botão para voltar para a página inicial -->
+      <a href="{{ url_for('index') }}" class="btn-voltar">Voltar para a Home</a>
+
+      <!-- Seção 1: Criando Ambiente Virtual e Desenvolvendo Código -->
+      <h4>CLASS 04 (10/30)</h4>
+      <div class="decorative-line"></div>
+      <h2>Criando um Novo Ambiente Virtual e Desenvolvendo Código</h2>
+      <p>
+        Sempre importe Flask ao criar um novo ambiente virtual:
+        <code>from flask import Flask</code>
+      </p>
+      <p><b>Conceitos-Chave:</b></p>
+      <ul>
+        <li>Cada requisição web segue o padrão RR (Request and Response).</li>
+        <li>
+          O ambiente web é reativo – ele atua somente quando há uma requisição.
+        </li>
+        <li>
+          Flask permite que o código Python escute requisições e responda
+          adequadamente.
+        </li>
+        <li>
+          Primeiro, a requisição chega ao Flask; em seguida, o Python a processa
+          e retorna uma resposta.
+        </li>
+      </ul>
+      <p>O primeiro passo é criar a aplicação Flask.</p>
+      <p>
+        A variável que representa a aplicação pode ter qualquer nome, mas
+        normalmente é definida no <code>app.py</code>.
+      </p>
+      <p>
+        Para atualizar automaticamente o servidor ao modificar o código:
+        <code>app.run(debug=True)</code>
+      </p>
+      <p>
+        Para alterar a porta padrão: <code>app.run(debug=True, port=XXXX)</code>
+      </p>
+      <p>
+        Para tornar a aplicação acessível na rede local:
+        <code>app.run(debug=True, port=XXXX, host='0.0.0.0')</code>
+      </p>
+      <p>
+        Para que uma aplicação web seja reativa, ela precisa de rotas. Rotas
+        devem estar vinculadas a funções que definem a resposta.
+      </p>
+      <p>Exemplo de criação de uma rota:</p>
+      <pre><code>@app.route('/contact')
+def contact():
+    return 'Esta é a página de contato'</code></pre>
+      <p>
+        <em
+          >Nesta aula foram criados um novo <code>app.py</code>, várias páginas
+          para a aplicação e aprendido como incorporar HTML ao Flask.</em
+        >
+      </p>
+
+      <h2>Atividades (Renderização e Autenticação)</h2>
+      <ol>
+        <li>
+          Considerando um usuário e uma senha temporários (apenas para teste),
+          crie uma página de autenticação que retorne a mensagem "Bom dia
+          {pessoa}" se as credenciais estiverem corretas ou "Usuário e senha não
+          conferem" caso contrário.
+        </li>
+        <li>Limite as tentativas de login a 2 vezes.</li>
+        <li>Estilize as páginas.</li>
+        <li>
+          Desenvolva um script Python que gere automaticamente um template HTML
+          baseado em um formulário de input. Os dados devem ser recebidos como
+          um payload JSON.
+        </li>
+        <li>
+          Modifique o script da atividade anterior para que, após gerar o
+          template, ele construa automaticamente uma rota que permita
+          visualizá-lo.
+        </li>
+        <li>
+          Crie uma classe "Pessoa" que encapsule os dados do usuário e
+          desenvolva uma função de autenticação.
+        </li>
+      </ol>
+
+      <h2>Resultado feito</h2>
+
+      <ol class="result-list">
+        <li>
+          <a href="/aula4atv1" class="btn-atv">Atividade 01</a>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

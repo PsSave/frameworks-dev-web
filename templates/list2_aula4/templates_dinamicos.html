@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 2 - Gerar Template</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="form">
+      <h1>Exercício 2: Gerar Template Dinâmico</h1>
+      <form method="POST" action="/aula4/atv2">
+        <label for="title">Título:</label>
+        <input type="text" name="title" id="title" required />
+
+        <label for="body">Conteúdo:</label>
+        <textarea name="body" id="body" rows="4" required></textarea>
+
+        <button type="submit">Gerar Template</button>
+      </form>
+    </div>
+  </body>
+</html>
