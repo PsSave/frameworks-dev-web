@@ -2,22 +2,15 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+from aulas.aula_1.main import aula1_bp
 
-@app.route('/')
+app.register_blueprint(aula1_bp, url_prefix="/aula1")
+
+
+@app.route("/")
 def index():
-    return render_template('menu.html')
+    return render_template("index.html")
 
-@app.route('/canva')
-def canvas():
-    return render_template('canva.html')
 
-@app.route('/webcam')
-def webcam():
-    return render_template('webcam.html')
-
-@app.route('/list')
-def list():
-    return render_template('list.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0")

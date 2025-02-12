@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 1 - Notas e Avaliação</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_aula_1.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h4>CLASS 01 (10/09)</h4>
+      <a href="{{ url_for('index') }}" class="btn-voltar">Voltar para a Home</a>
+      <div class="decorative-line"></div>
+      <h2>Notas e Estratégias de Avaliação</h2>
+      <p>Avaliação:</p>
+      <ol>
+        <li>
+          Teste de Codificação Ao Vivo (Exame disponibilizado 48 horas antes) -
+          (12/11 e 12/18) (data posteriormente alterada)
+        </li>
+        <li>Envio do Portfólio (02/12)</li>
+        <li>Atividade Prática com Requisitos (01/22)</li>
+      </ol>
+      <p>A atividade final deve conter:</p>
+      <ul>
+        <li>Ao menos uma API desenvolvida;</li>
+        <li>Um endpoint documentado com parâmetros de entrada e saída;</li>
+        <li>Código limpo e bem estruturado;</li>
+        <li>Plena funcionalidade;</li>
+        <li>
+          Validações necessárias para entrada de dados e tratamento de erros;
+        </li>
+        <li>Bônus: Caso a aplicação seja elástica ou escalável;</li>
+        <li>Integração com um banco de dados;</li>
+        <li>Testes baseados na documentação do projeto.</li>
+      </ul>
+      <p>Pontos importantes para a próxima aula:</p>
+      <ul>
+        <li>Criar um ambiente virtual Python usando venv;</li>
+        <li>
+          Aprender a instalar pacotes Python (serão instalados durante a aula);
+        </li>
+        <li>
+          Gerar um arquivo requirements.txt listando as dependências (similar ao
+          package.json);
+        </li>
+        <li>Assegurar que o Python 3.11 esteja instalado;</li>
+        <li>Familiarizar-se com o uso do Linux.</li>
+      </ul>
+      <p>Melhores Práticas:</p>
+      <ul>
+        <li>Evite colocar o código dentro da pasta do ambiente virtual;</li>
+        <li>
+          Priorize o desenvolvimento de aplicações web ao invés de soluções
+          locais.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

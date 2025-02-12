@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bem-vindo ao Meu Portfólio</h1>
+      <p>Selecione uma aula para visualizar seus conteúdos:</p>
+      <ul>
+        <li><a href="{{ url_for('aula1.index') }}">Aula 1</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
