@@ -31,7 +31,7 @@ Siga os passos abaixo para clonar e executar o projeto:
 3. **Crie um ambiente virtual:**
 
 ```bash
-  python3 -m venv venv
+  python3 -m venv .venv
 ```
 
 4. **Ative o ambiente virtual:**
