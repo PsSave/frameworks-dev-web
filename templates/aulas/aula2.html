@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 3 - Ambiente Virtual e Instalação do Flask</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style_aula.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h4>AULA 03 (10/23)</h4>
+      <a href="{{ url_for('index') }}" class="btn-voltar">Voltar para a Home</a>
+      <div class="decorative-line"></div>
+      <h2>Configuração do Ambiente Virtual e Instalação do Flask</h2>
+
+      <p><strong>Passos Essenciais:</strong></p>
+      <ol>
+        <li>
+          <strong>Criar o Ambiente Virtual:</strong>
+          <pre><code>python -m venv meu_ambiente</code></pre>
+        </li>
+        <li>
+          <strong
+            >Permitir Ambientes Virtuais (no PowerShell, apenas uma
+            vez):</strong
+          >
+          <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+        </li>
+        <li>
+          <strong>Ativar o Ambiente:</strong>
+          <pre><code>meu_ambiente\Scripts\activate</code></pre>
+        </li>
+        <li>
+          <strong>Instalar o Flask:</strong>
+          <pre><code>pip install flask</code></pre>
+        </li>
+      </ol>
+
+      <h3>Padronização e Organização do Código</h3>
+      <ul>
+        <li>Arquivos HTML devem estar na pasta <code>templates</code>.</li>
+        <li>Utilize código limpo com nomes significativos (em inglês).</li>
+        <li>
+          Siga a convenção <code>snake_case</code> para variáveis (sem acentos
+          ou caracteres especiais).
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
